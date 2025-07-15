@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const Page = () => {
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "", email: "",password:"", role:"",mobile:""});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -24,7 +24,7 @@ const Page = () => {
       });
       if (!response.ok) throw new Error('Registration failed');
       alert('Success!');
-      setUser({ name: "", email: "" }); // Reset form
+      setUser({ name: "", email: "",mobile:"",password:""}); // Reset form
     } catch (err) {
       setError(err.message);
     } finally {
@@ -51,6 +51,22 @@ const Page = () => {
           onChange={handleChange}
           className='p-2 rounded bg-gray-800 text-white'
           placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          value={user.password}
+          onChange={handleChange}
+          className='p-2 rounded bg-gray-800 text-white'
+          placeholder="Password"
+        />
+        <input
+          type="text"
+          name="mobile"
+          value={user.mobile}
+          onChange={handleChange}
+          className='p-2 rounded bg-gray-800 text-white'
+          placeholder="mobile"
         />
         <button
           onClick={handleSubmit}
