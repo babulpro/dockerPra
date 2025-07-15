@@ -72,7 +72,7 @@ const AllProduct = () => {
       <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {product.map((product) => (
                 <div key={product._id} className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow">
-                    <Link href={`/dashboard/pages/details/${product._id}`} className="block group">
+                    <Link href={`/dashboard/pages/product/${product._id}`} className="block group">
                         <div className="aspect-square overflow-hidden rounded-lg">
                             <img
                                 src={product.image}
